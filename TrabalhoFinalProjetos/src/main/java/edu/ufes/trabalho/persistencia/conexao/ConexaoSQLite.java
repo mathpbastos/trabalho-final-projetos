@@ -38,17 +38,47 @@ public class ConexaoSQLite {
     }
 
     public static void fecharConexao(Connection conexao) throws SQLException {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        if(conexao != null){
+            try{
+                conexao.close();
+            }
+            catch (SQLException ex){
+                throw new SQLException("Não foi possível encerrar a conexão"
+                        + ex.getMessage());
+            }
+        }
     }
 
     public static void fecharConexao(Connection conexao, Statement statement) 
             throws SQLException {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        if(conexao != null){
+            try{
+                conexao.close();
+            }
+            catch (SQLException ex){
+                throw new SQLException("Não foi possível encerrar a conexão"
+                        + ex.getMessage());
+            }
+        }
+        if(statement != null)
+            statement.close();
     }
 
     public static void fecharConexao(Connection conexao, Statement statement, 
             ResultSet resultSet) throws SQLException {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        if(conexao != null){
+            try{
+                conexao.close();
+            }
+            catch (SQLException ex){
+                throw new SQLException("Não foi possível encerrar a conexão"
+                        + ex.getMessage());
+            }
+        }
+        if(statement != null)
+            statement.close();
+        if(resultSet != null)
+            resultSet.close();
     }
            
 }
