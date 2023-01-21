@@ -1,7 +1,7 @@
 
 # Project
 /TrabalhoFinalProjetos/target/
-
+*.db
 # Generated files
 *.json
 
