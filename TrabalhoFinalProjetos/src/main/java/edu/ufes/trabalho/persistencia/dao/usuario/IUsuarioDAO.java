@@ -16,4 +16,6 @@ public interface IUsuarioDAO {
     
     boolean excluir(long id) throws SQLException;
     
+    Usuario autenticar(String login, String senha) throws SQLException;
+    
 }
