@@ -6,14 +6,14 @@ import java.util.List;
 
 public interface IUsuarioDAO {
     
-    long salvar(Usuario usuario) throws SQLException;
+    boolean salvar(Usuario usuario) throws SQLException;
     
-    boolean alterar(Usuario usuario) throws SQLException;
+    boolean atualizar(Usuario usuario) throws SQLException;
     
     Usuario buscarPorId(long id) throws SQLException;
     
-    List<Usuario> buscarTodos();
+    List<Usuario> buscarTodos() throws SQLException;
     
-    boolean excluir(long id);
+    boolean excluir(long id) throws SQLException;
     
 }
