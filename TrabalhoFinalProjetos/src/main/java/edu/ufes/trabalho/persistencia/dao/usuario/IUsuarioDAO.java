@@ -18,4 +18,6 @@ public interface IUsuarioDAO {
     
     Usuario autenticar(String login, String senha) throws SQLException;
     
+    int contarUsuarios() throws SQLException;
+    
 }

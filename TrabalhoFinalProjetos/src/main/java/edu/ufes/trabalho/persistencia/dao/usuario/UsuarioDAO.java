@@ -87,7 +87,7 @@ public class UsuarioDAO implements IUsuarioDAO {
             ps.setBoolean(6, usuario.isAdministrador());
             ps.setLong(7, usuario.getId());
             ps.executeUpdate();
-            
+
             return true;
         } catch (SQLException ex) {
             throw new SQLException("Erro ao atualizar informações do usuário.\n"
@@ -236,7 +236,7 @@ public class UsuarioDAO implements IUsuarioDAO {
                     + ", dt_modificacao"//4
                     + ", fl_autorizacao"//5
                     + ", fl_administrador "//6
-                    + "FROM usuarios"
+                    + "FROM usuarios "
                     + "WHERE login = ? "
                     + "AND senha = ?;";
             ps = conexao.prepareStatement(query);
@@ -275,6 +275,28 @@ public class UsuarioDAO implements IUsuarioDAO {
             throw new SQLException("Erro ao realizar autenticação "
                     + "do usuário.\n" + ex.getMessage());
         } finally {
+            ConexaoSQLite.fecharConexao(conexao, ps, rs);
+        }
+    }
+
+    @Override
+    public int contarUsuarios() throws SQLException {
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        try {
+            String query = "SELECT COUNT("
+                    + "id_usuario"
+                    + ") "
+                    + "FROM usuarios;";
+            ps = conexao.prepareStatement(query);
+            rs = ps.executeQuery();
+            int quantidade = rs.getInt(1);
+            return quantidade;
+        }
+        catch(SQLException ex){
+            throw new SQLException("Erro ao contar os usuários.");
+        }
+        finally {
             ConexaoSQLite.fecharConexao(conexao, ps, rs);
         }
     }
