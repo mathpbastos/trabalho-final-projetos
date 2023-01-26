@@ -15,4 +15,10 @@ public interface IUsuarioService {
     public List<Usuario> buscarTodos() throws ClassNotFoundException, SQLException;
 
     public Usuario buscarPorId(long id) throws ClassNotFoundException, SQLException;
+
+    public Usuario autenticar(String login, String senha) 
+            throws ClassNotFoundException, SQLException;
+    
+    public int contarUsuarios() throws ClassNotFoundException, SQLException;
+
 }

@@ -46,5 +46,17 @@ public class UsuarioRepository implements IUsuarioRepository {
         abrirConexoes();
         return usuarioDAO.buscarPorId(id);
     }
+
+    @Override
+    public Usuario autenticar(String login, String senha) throws ClassNotFoundException, SQLException {
+        abrirConexoes();
+        return usuarioDAO.autenticar(login, senha);
+    }
+
+    @Override
+    public int contarUsuarios() throws ClassNotFoundException, SQLException {
+        abrirConexoes();
+        return usuarioDAO.contarUsuarios();
+    }
     
 }

@@ -38,5 +38,15 @@ public class UsuarioService implements IUsuarioService{
     public Usuario buscarPorId(long id) throws ClassNotFoundException, SQLException {
         return usuarioRepository.buscarPorId(id);
     }
+
+    @Override
+    public Usuario autenticar(String login, String senha) throws ClassNotFoundException, SQLException {
+        return usuarioRepository.autenticar(login, senha);
+    }
+
+    @Override
+    public int contarUsuarios() throws ClassNotFoundException, SQLException {
+        return usuarioRepository.contarUsuarios();
+    }
     
 }
