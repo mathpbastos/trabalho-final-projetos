@@ -5,6 +5,7 @@ import edu.ufes.trabalho.presenter.principal.TelaPrincipalPresenter;
 public abstract class TelaPrincipalState {
     
     protected TelaPrincipalPresenter principalPresenter;
+    protected String descricao;
     
     public TelaPrincipalState(TelaPrincipalPresenter principalPresenter){
         this.principalPresenter = principalPresenter;

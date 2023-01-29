@@ -28,29 +28,20 @@ public class TelaPrincipalPresenter {
         this.usuarioService = new UsuarioService();
     }
     
-    private void initState(){
-        try {
-            int quantidadeUsuarios = usuarioService.contarUsuarios();            
-            // Caso haja usuários cadastrados, iniciará no estado de login
-            if(quantidadeUsuarios != 0){
-                this.setEstado(new LoginState(this));
-            }
-            else {
-                this.setEstado(new CadastroState(this));
-            }
-        } catch (ClassNotFoundException | SQLException ex) {
-            JOptionPane.showMessageDialog(view,
-                    "Erro ao inicializar o programa.\n", 
-                    "Erro",
-                    JOptionPane.ERROR_MESSAGE);
-        }
-    }
-    
     private void initListeners(){
+        // Menu item novo usuário
         view.getMiNovoUsuario().addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e) {
                 abrirTelaCadastro();
+            }
+        });
+        
+        // Menu item sair
+        view.getMiSair().addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                sair();
             }
         });
     }
@@ -59,7 +50,37 @@ public class TelaPrincipalPresenter {
         TelaCadastroPresenter cadastroPresenter = new TelaCadastroPresenter();
         view.getDesktopPane().add(cadastroPresenter.getView());
     }
+    
+    private void sair(){
+        System.exit(0);
+    }
+    
+    private void initState(){
+        try {
+            // Caso não haja usuários cadastrados, iniciará no estado de cadastro.
+            if(usuarioService.contarUsuarios() == 0){
+                this.estado = new CadastroState(this);
+            }
+            else{
+                this.estado = new LoginState(this);
+            }        
+        } catch (ClassNotFoundException | SQLException ex) {
+            JOptionPane.showMessageDialog(view,
+                    "Erro ao inicializar o programa.\n", 
+                    "Erro",
+                    JOptionPane.ERROR_MESSAGE);
+        }
+    }
+    
+    // Métodos de state.
+    public void cadastro(){
+        this.estado.cadastro();
+    }
         
+    public void login(){
+        this.estado.login();
+    }
+    
     public TelaPrincipalView getView(){
         return this.view;
     }

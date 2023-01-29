@@ -10,7 +10,6 @@ public class CadastroState extends TelaPrincipalState{
     public CadastroState(TelaPrincipalPresenter principalPresenter){
         super(principalPresenter);
         initTelaCadastro();
-        this.principalPresenter.setEstado(this);
     }
     
     private void initTelaCadastro(){
@@ -31,6 +30,8 @@ public class CadastroState extends TelaPrincipalState{
     public void login() {
         TelaLoginPresenter loginPresenter = new TelaLoginPresenter();
         this.principalPresenter.getView().getDesktopPane().add(loginPresenter.getView());
+        
+        this.principalPresenter.setEstado(this);
     }
     
 }

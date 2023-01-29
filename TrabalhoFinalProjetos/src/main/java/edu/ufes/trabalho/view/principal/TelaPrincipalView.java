@@ -72,48 +72,48 @@ public class TelaPrincipalView extends javax.swing.JFrame {
 
         desktopPane = new javax.swing.JDesktopPane();
         menuBar = new javax.swing.JMenuBar();
-        editMenu = new javax.swing.JMenu();
+        usuariosMenu = new javax.swing.JMenu();
         miNovoUsuario = new javax.swing.JMenuItem();
         miListarUsuarios = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
+        notificacoesMenu = new javax.swing.JMenu();
         miNovaNotificacao = new javax.swing.JMenuItem();
         miListarNotificacoes = new javax.swing.JMenuItem();
-        fileMenu = new javax.swing.JMenu();
+        contaMenu = new javax.swing.JMenu();
         jMenu1 = new javax.swing.JMenu();
         miAlterarSenha = new javax.swing.JMenuItem();
         miAlterarDados = new javax.swing.JMenuItem();
         miDeslogar = new javax.swing.JMenuItem();
         miSair = new javax.swing.JMenuItem();
-        helpMenu = new javax.swing.JMenu();
+        ajudaMenu = new javax.swing.JMenu();
         miSobre = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        editMenu.setMnemonic('e');
-        editMenu.setText("Usuários");
+        usuariosMenu.setMnemonic('e');
+        usuariosMenu.setText("Usuários");
 
         miNovoUsuario.setMnemonic('t');
         miNovoUsuario.setText("Novo usuário");
-        editMenu.add(miNovoUsuario);
+        usuariosMenu.add(miNovoUsuario);
 
         miListarUsuarios.setMnemonic('y');
         miListarUsuarios.setText("Listar usuários");
-        editMenu.add(miListarUsuarios);
+        usuariosMenu.add(miListarUsuarios);
 
-        menuBar.add(editMenu);
+        menuBar.add(usuariosMenu);
 
-        jMenu2.setText("Notificações");
+        notificacoesMenu.setText("Notificações");
 
         miNovaNotificacao.setText("Nova Notificação");
-        jMenu2.add(miNovaNotificacao);
+        notificacoesMenu.add(miNovaNotificacao);
 
         miListarNotificacoes.setText("Listar Notificações");
-        jMenu2.add(miListarNotificacoes);
+        notificacoesMenu.add(miListarNotificacoes);
 
-        menuBar.add(jMenu2);
+        menuBar.add(notificacoesMenu);
 
-        fileMenu.setMnemonic('f');
-        fileMenu.setText("Conta");
+        contaMenu.setMnemonic('f');
+        contaMenu.setText("Conta");
 
         jMenu1.setText("Gerenciamento");
 
@@ -123,11 +123,11 @@ public class TelaPrincipalView extends javax.swing.JFrame {
         miAlterarDados.setText("Alterar dados");
         jMenu1.add(miAlterarDados);
 
-        fileMenu.add(jMenu1);
+        contaMenu.add(jMenu1);
 
         miDeslogar.setMnemonic('a');
         miDeslogar.setText("Deslogar");
-        fileMenu.add(miDeslogar);
+        contaMenu.add(miDeslogar);
 
         miSair.setMnemonic('x');
         miSair.setText("Sair");
@@ -136,18 +136,18 @@ public class TelaPrincipalView extends javax.swing.JFrame {
                 miSairActionPerformed(evt);
             }
         });
-        fileMenu.add(miSair);
+        contaMenu.add(miSair);
 
-        menuBar.add(fileMenu);
+        menuBar.add(contaMenu);
 
-        helpMenu.setMnemonic('h');
-        helpMenu.setText("Ajuda");
+        ajudaMenu.setMnemonic('h');
+        ajudaMenu.setText("Ajuda");
 
         miSobre.setMnemonic('a');
         miSobre.setText("Sobre");
-        helpMenu.add(miSobre);
+        ajudaMenu.add(miSobre);
 
-        menuBar.add(helpMenu);
+        menuBar.add(ajudaMenu);
 
         setJMenuBar(menuBar);
 
@@ -209,12 +209,10 @@ public class TelaPrincipalView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenu ajudaMenu;
+    private javax.swing.JMenu contaMenu;
     private javax.swing.JDesktopPane desktopPane;
-    private javax.swing.JMenu editMenu;
-    private javax.swing.JMenu fileMenu;
-    private javax.swing.JMenu helpMenu;
     private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JMenuItem miAlterarDados;
     private javax.swing.JMenuItem miAlterarSenha;
@@ -225,6 +223,8 @@ public class TelaPrincipalView extends javax.swing.JFrame {
     private javax.swing.JMenuItem miNovoUsuario;
     private javax.swing.JMenuItem miSair;
     private javax.swing.JMenuItem miSobre;
+    private javax.swing.JMenu notificacoesMenu;
+    private javax.swing.JMenu usuariosMenu;
     // End of variables declaration//GEN-END:variables
 
 }
