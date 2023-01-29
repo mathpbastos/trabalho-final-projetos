@@ -11,7 +11,13 @@ public class Usuario {
     private LocalDate dataCadastro;
     private LocalDate dataModificacao;
     private boolean administrador;
-    private boolean autorizado;
+    private boolean autorizado = false;
+    
+    public Usuario(String nome, String login, String senha){
+        this.nome = nome;
+        this.login = login;
+        this.senha = senha;
+    }
     
     public Usuario(String nome, 
             String login, 
@@ -21,6 +27,18 @@ public class Usuario {
         this.login = login;
         this.senha = senha;
         this.administrador = administrador;
+    }
+    
+    public Usuario(String nome, 
+            String login, 
+            String senha,
+            boolean administrador,
+            boolean autorizado) {
+        this.nome = nome;
+        this.login = login;
+        this.senha = senha;
+        this.administrador = administrador;
+        this.autorizado = autorizado;
     }
 
     public Usuario(long id, 
