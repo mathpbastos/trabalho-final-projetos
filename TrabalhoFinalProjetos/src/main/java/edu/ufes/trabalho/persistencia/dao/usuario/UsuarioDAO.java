@@ -49,7 +49,7 @@ public class UsuarioDAO implements IUsuarioDAO {
                     formatador.format(LocalDate.now()));
             ps.setString(5,
                     formatador.format(LocalDate.now()));
-            ps.setBoolean(6, false); // false pois deve ser o padao ao ser cadastrado
+            ps.setBoolean(6, usuario.isAutorizado()); // false pois deve ser o padao ao ser cadastrado
             ps.setBoolean(7, usuario.isAdministrador());
             ps.executeUpdate();
 
