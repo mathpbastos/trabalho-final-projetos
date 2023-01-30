@@ -90,6 +90,10 @@ public class Usuario {
         return senha;
     }
 
+    public LocalDate getDataModificacao() {
+        return dataModificacao;
+    }
+
     public LocalDate getDataCadastro() {
         return dataCadastro;
     }
@@ -122,6 +126,7 @@ public class Usuario {
         this.autorizado = autorizado;
     }
     
+    @Override
     public String toString(){
         return "Id: " + this.id
                 + "\nNome: " + this.nome
