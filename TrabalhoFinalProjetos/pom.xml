@@ -27,6 +27,13 @@
             <artifactId>java-dotenv</artifactId>
             <version>5.2.2</version>
         </dependency>
+        
+        <!-- https://github.com/claytonfraga/validadorsenha -->        
+        <dependency>
+            <groupId>com.pss.senha.validacao</groupId>
+            <artifactId>ValidadorSenha</artifactId>
+            <version>1.08-SNAPSHOT</version>
+        </dependency>
 
     </dependencies>
 </project>
