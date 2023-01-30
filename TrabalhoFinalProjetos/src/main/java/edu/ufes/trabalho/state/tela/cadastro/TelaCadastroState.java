@@ -1,6 +1,6 @@
 package edu.ufes.trabalho.state.tela.cadastro;
 
-import edu.ufes.trabalho.presenter.cadastro.TelaCadastroPresenter;
+import edu.ufes.trabalho.presenter.usuario.TelaCadastroPresenter;
 
 public abstract class TelaCadastroState {
     

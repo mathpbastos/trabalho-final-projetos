@@ -1,6 +1,6 @@
 package edu.ufes.trabalho.state.tela.cadastro;
 
-import edu.ufes.trabalho.presenter.cadastro.TelaCadastroPresenter;
+import edu.ufes.trabalho.presenter.usuario.TelaCadastroPresenter;
 
 /* 
     Este estado serve para que o programa saiba quando está sendo utilizado 

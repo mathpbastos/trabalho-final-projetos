@@ -1,13 +1,13 @@
 package edu.ufes.trabalho.state.tela.principal;
 
-import edu.ufes.trabalho.presenter.cadastro.TelaCadastroPresenter;
+import edu.ufes.trabalho.presenter.usuario.TelaCadastroPresenter;
 import edu.ufes.trabalho.presenter.login.TelaLoginPresenter;
 import edu.ufes.trabalho.presenter.principal.TelaPrincipalPresenter;
 import javax.swing.JOptionPane;
 
-public class CadastroState extends TelaPrincipalState{
+public class PrimeiroCadastroState extends TelaPrincipalState{
 
-    public CadastroState(TelaPrincipalPresenter principalPresenter){
+    public PrimeiroCadastroState(TelaPrincipalPresenter principalPresenter){
         super(principalPresenter);
         initTelaCadastro();
     }
@@ -27,11 +27,11 @@ public class CadastroState extends TelaPrincipalState{
     }
     
     @Override
-    public void login() {
+    public void logar() {
         TelaLoginPresenter loginPresenter = new TelaLoginPresenter();
         this.principalPresenter.getView().getDesktopPane().add(loginPresenter.getView());
         
-        this.principalPresenter.setEstado(this);
+        this.principalPresenter.setEstado(new UsuarioDeslogadoState(principalPresenter));
     }
     
 }

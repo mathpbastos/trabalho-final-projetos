@@ -16,7 +16,12 @@ public abstract class TelaPrincipalState {
                 + "o estado a partir do estado atual.");
     }
     
-    public void login(){
+    public void logar(){
+        throw new UnsupportedOperationException("Não é possível alterar "
+                + "o estado a partir do estado atual.");
+    }
+    
+    public void deslogar(){
         throw new UnsupportedOperationException("Não é possível alterar "
                 + "o estado a partir do estado atual.");
     }

@@ -1,4 +1,4 @@
-package edu.ufes.trabalho.presenter.cadastro;
+package edu.ufes.trabalho.presenter.usuario;
 
 import edu.ufes.trabalho.model.Usuario;
 import edu.ufes.trabalho.persistencia.repository.usuario.service.IUsuarioService;
