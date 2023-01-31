@@ -56,7 +56,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="miListarUsuarios">
               <Properties>
                 <Property name="mnemonic" type="int" value="121"/>
-                <Property name="text" type="java.lang.String" value="Listar usu&#xe1;rios"/>
+                <Property name="text" type="java.lang.String" value="Buscar usu&#xe1;rios"/>
               </Properties>
             </MenuItem>
             <Menu class="javax.swing.JMenu" name="subMenuGerenciamento">
@@ -67,11 +67,6 @@
                 <MenuItem class="javax.swing.JMenuItem" name="miAlterarSenha">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Alterar senha"/>
-                  </Properties>
-                </MenuItem>
-                <MenuItem class="javax.swing.JMenuItem" name="miAlterarDados">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Alterar dados"/>
                   </Properties>
                 </MenuItem>
               </SubComponents>

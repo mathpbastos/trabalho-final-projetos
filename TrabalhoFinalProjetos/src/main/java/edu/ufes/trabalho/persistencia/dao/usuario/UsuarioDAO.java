@@ -49,7 +49,7 @@ public class UsuarioDAO implements IUsuarioDAO {
                     formatador.format(LocalDate.now()));
             ps.setString(5,
                     formatador.format(LocalDate.now()));
-            ps.setBoolean(6, usuario.isAutorizado()); // false pois deve ser o padao ao ser cadastrado
+            ps.setBoolean(6, usuario.isAutorizado());
             ps.setBoolean(7, usuario.isAdministrador());
             ps.executeUpdate();
 
@@ -68,8 +68,7 @@ public class UsuarioDAO implements IUsuarioDAO {
         PreparedStatement ps = null;
         try {
             String query = "UPDATE usuarios "
-                    + "SET "
-                    + "nm_usuario = ?"//1
+                    + "SET nm_usuario = ?"//1
                     + ", login = ?" //2
                     + ", senha = ?"//3
                     + ", dt_modificacao = ? " //4
@@ -77,7 +76,7 @@ public class UsuarioDAO implements IUsuarioDAO {
                     + ", fl_administrador = ? " //6
                     + "WHERE id_usuario = ?;"; //7
 
-            ps = conexao.prepareStatement(query);
+            ps = conexao.prepareStatement(query);          
             ps.setString(1, usuario.getNome());
             ps.setString(2, usuario.getLogin());
             ps.setString(3, usuario.getSenha());
@@ -205,6 +204,59 @@ public class UsuarioDAO implements IUsuarioDAO {
     }
 
     @Override
+    public Usuario buscarPorIdECadastro(String nome, LocalDate dtCadastro) throws SQLException {
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        try {
+            String query = "SELECT "
+                    + "id_usuario"//1
+                    + ", login"//2
+                    + ", senha"//3
+                    + ", dt_modificacao"//4
+                    + ", fl_autorizacao"//5
+                    + ", fl_administrador "//6
+                    + "FROM usuarios "
+                    + "WHERE nm_usuario = ? "
+                    + "AND dt_cadastro = ?;";
+            ps = conexao.prepareStatement(query);
+            
+            ps.setString(1, nome);
+            ps.setString(2, formatador
+                    .format(dtCadastro));
+            
+            rs = ps.executeQuery();
+
+            if (!rs.next()) {
+                throw new SQLException("Nenhum usuário encontrado com\n"
+                        + "o nome e data de cadastro informados.");
+            }
+
+            Long id = rs.getLong(1);
+            String login = rs.getString(2);
+            String senha = rs.getString(3);
+            LocalDate dtModificacao = LocalDate.parse(rs.getString(4),
+                    formatador);
+            boolean autorizacao = rs.getInt(5) == 1 ? true : false;
+            boolean administrador = rs.getInt(6) == 1 ? true : false;
+
+            return new Usuario(id,
+                    nome,
+                    login,
+                    senha,
+                    dtCadastro,
+                    dtModificacao,
+                    administrador,
+                    autorizacao);
+        } catch (SQLException ex) {
+            throw new SQLException("Erro carregar dados do usuário." 
+                    + ex.getMessage());
+        } finally {
+            ConexaoSQLite.fecharConexao(conexao, ps, rs);
+        }
+
+    }
+
+    @Override
     public boolean excluir(long id) throws SQLException {
         PreparedStatement ps = null;
         try {
@@ -292,11 +344,9 @@ public class UsuarioDAO implements IUsuarioDAO {
             rs = ps.executeQuery();
             int quantidade = rs.getInt(1);
             return quantidade;
-        }
-        catch(SQLException ex){
+        } catch (SQLException ex) {
             throw new SQLException("Erro ao contar os usuários.");
-        }
-        finally {
+        } finally {
             ConexaoSQLite.fecharConexao(conexao, ps, rs);
         }
     }

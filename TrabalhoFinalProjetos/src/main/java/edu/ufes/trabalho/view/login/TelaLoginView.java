@@ -26,8 +26,8 @@ public class TelaLoginView extends javax.swing.JInternalFrame {
         return btnEntrar;
     }
 
-    public JButton getBtnSair() {
-        return btnSair;
+    public JButton getBtnFechar() {
+        return btnFechar;
     }
 
     public JPasswordField getPfSenha() {
@@ -52,7 +52,7 @@ public class TelaLoginView extends javax.swing.JInternalFrame {
         tfLogin = new javax.swing.JTextField();
         pfSenha = new javax.swing.JPasswordField();
         btnEntrar = new javax.swing.JButton();
-        btnSair = new javax.swing.JButton();
+        btnFechar = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
 
         setClosable(true);
@@ -65,7 +65,7 @@ public class TelaLoginView extends javax.swing.JInternalFrame {
 
         btnEntrar.setText("Entrar");
 
-        btnSair.setText("Sair");
+        btnFechar.setText("Fechar");
 
         jLabel3.setFont(new java.awt.Font("YaHei Consolas Hybrid", 1, 14)); // NOI18N
         jLabel3.setText("Informe suas credenciais");
@@ -80,7 +80,7 @@ public class TelaLoginView extends javax.swing.JInternalFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnEntrar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnSair))
+                        .addComponent(btnFechar))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2)
@@ -111,7 +111,7 @@ public class TelaLoginView extends javax.swing.JInternalFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnEntrar)
-                    .addComponent(btnSair))
+                    .addComponent(btnFechar))
                 .addContainerGap(17, Short.MAX_VALUE))
         );
 
@@ -121,7 +121,7 @@ public class TelaLoginView extends javax.swing.JInternalFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnEntrar;
-    private javax.swing.JButton btnSair;
+    private javax.swing.JButton btnFechar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

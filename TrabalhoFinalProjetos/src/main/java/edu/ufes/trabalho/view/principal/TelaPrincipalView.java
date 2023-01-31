@@ -4,7 +4,6 @@
  */
 package edu.ufes.trabalho.view.principal;
 
-import edu.ufes.trabalho.view.login.TelaLoginView;
 import javax.swing.JDesktopPane;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
@@ -24,10 +23,6 @@ public class TelaPrincipalView extends javax.swing.JFrame {
 
     public JDesktopPane getDesktopPane() {
         return desktopPane;
-    }
-
-    public JMenuItem getMiAlterarDados() {
-        return miAlterarDados;
     }
 
     public JMenuItem getMiAlterarSenha() {
@@ -107,7 +102,6 @@ public class TelaPrincipalView extends javax.swing.JFrame {
         miListarUsuarios = new javax.swing.JMenuItem();
         subMenuGerenciamento = new javax.swing.JMenu();
         miAlterarSenha = new javax.swing.JMenuItem();
-        miAlterarDados = new javax.swing.JMenuItem();
         notificacoesMenu = new javax.swing.JMenu();
         miNovaNotificacao = new javax.swing.JMenuItem();
         miVisualizarNotificacoes = new javax.swing.JMenuItem();
@@ -147,16 +141,13 @@ public class TelaPrincipalView extends javax.swing.JFrame {
         usuariosMenu.add(miNovoUsuario);
 
         miListarUsuarios.setMnemonic('y');
-        miListarUsuarios.setText("Listar usuários");
+        miListarUsuarios.setText("Buscar usuários");
         usuariosMenu.add(miListarUsuarios);
 
         subMenuGerenciamento.setText("Gerenciamento");
 
         miAlterarSenha.setText("Alterar senha");
         subMenuGerenciamento.add(miAlterarSenha);
-
-        miAlterarDados.setText("Alterar dados");
-        subMenuGerenciamento.add(miAlterarDados);
 
         usuariosMenu.add(subMenuGerenciamento);
 
@@ -245,7 +236,6 @@ public class TelaPrincipalView extends javax.swing.JFrame {
     private javax.swing.JDesktopPane desktopPane;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar menuBar;
-    private javax.swing.JMenuItem miAlterarDados;
     private javax.swing.JMenuItem miAlterarSenha;
     private javax.swing.JMenuItem miDeslogar;
     private javax.swing.JMenuItem miListarUsuarios;

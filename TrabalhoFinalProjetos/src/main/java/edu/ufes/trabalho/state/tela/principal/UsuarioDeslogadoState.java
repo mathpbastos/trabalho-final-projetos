@@ -22,8 +22,6 @@ public class UsuarioDeslogadoState extends TelaPrincipalState{
     private void initLoginMenu(){
         this.principalPresenter.getView().getSubMenuGerenciamento()
                 .setVisible(false);
-        this.principalPresenter.getView().getMiAlterarDados()
-                .setVisible(false);
         this.principalPresenter.getView().getMiAlterarSenha()
                 .setVisible(false);
         this.principalPresenter.getView().getMiListarUsuarios()
@@ -37,12 +35,6 @@ public class UsuarioDeslogadoState extends TelaPrincipalState{
         
         this.principalPresenter.getView().getMiLogin()
                 .setVisible(true);
-    }
-    
-    @Override
-    public void logar(){
-        this.principalPresenter
-                .setEstado(new UsuarioLogadoState(this.principalPresenter));
     }
     
 }

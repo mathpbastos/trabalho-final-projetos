@@ -4,6 +4,7 @@ import edu.ufes.trabalho.model.Usuario;
 import edu.ufes.trabalho.persistencia.repository.usuario.IUsuarioRepository;
 import edu.ufes.trabalho.persistencia.repository.usuario.UsuarioRepository;
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.List;
 
 public class UsuarioService implements IUsuarioService{
@@ -47,6 +48,12 @@ public class UsuarioService implements IUsuarioService{
     @Override
     public int contarUsuarios() throws ClassNotFoundException, SQLException {
         return usuarioRepository.contarUsuarios();
+    }
+
+    @Override
+    public Usuario buscarPorIdECadastro(String nome, LocalDate dtCadastro) 
+            throws ClassNotFoundException, SQLException {
+        return usuarioRepository.buscarPorIdECadastro(nome, dtCadastro);
     }
     
 }

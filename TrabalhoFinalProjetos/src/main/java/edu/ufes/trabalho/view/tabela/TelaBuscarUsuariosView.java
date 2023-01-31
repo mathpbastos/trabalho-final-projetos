@@ -4,18 +4,19 @@
  */
 package edu.ufes.trabalho.view.tabela;
 
+import javax.swing.JButton;
 import javax.swing.JTable;
 
 /**
  *
  * @author b1n
  */
-public class TelaListarUsuariosView extends javax.swing.JInternalFrame {
+public class TelaBuscarUsuariosView extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form TelaListarUsuariosView
      */
-    public TelaListarUsuariosView() {
+    public TelaBuscarUsuariosView() {
         initComponents();
     }
 
@@ -23,6 +24,16 @@ public class TelaListarUsuariosView extends javax.swing.JInternalFrame {
         return tblUsuarios;
     }
 
+    public JButton getBtnDetalhes() {
+        return btnDetalhes;
+    }
+
+    public JButton getBtnFechar() {
+        return btnFechar;
+    }
+
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -34,8 +45,8 @@ public class TelaListarUsuariosView extends javax.swing.JInternalFrame {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         tblUsuarios = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btnFechar = new javax.swing.JButton();
+        btnDetalhes = new javax.swing.JButton();
 
         setClosable(true);
         setIconifiable(true);
@@ -54,9 +65,9 @@ public class TelaListarUsuariosView extends javax.swing.JInternalFrame {
         ));
         jScrollPane1.setViewportView(tblUsuarios);
 
-        jButton1.setText("Fechar");
+        btnFechar.setText("Fechar");
 
-        jButton2.setText("Detalhes...");
+        btnDetalhes.setText("Detalhes...");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -67,9 +78,9 @@ public class TelaListarUsuariosView extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jButton2)
+                        .addComponent(btnDetalhes)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton1))
+                        .addComponent(btnFechar))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 774, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -80,8 +91,8 @@ public class TelaListarUsuariosView extends javax.swing.JInternalFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(btnFechar)
+                    .addComponent(btnDetalhes))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -90,8 +101,8 @@ public class TelaListarUsuariosView extends javax.swing.JInternalFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton btnDetalhes;
+    private javax.swing.JButton btnFechar;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tblUsuarios;
     // End of variables declaration//GEN-END:variables

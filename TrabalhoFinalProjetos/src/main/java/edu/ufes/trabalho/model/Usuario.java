@@ -125,17 +125,5 @@ public class Usuario {
     public void setAutorizado(boolean autorizado) {
         this.autorizado = autorizado;
     }
-    
-    @Override
-    public String toString(){
-        return "Id: " + this.id
-                + "\nNome: " + this.nome
-                + "\nLogin: " + this.login
-                + "\nSenha: " + this.senha
-                + "\nData Cadastro: " + this.dataCadastro
-                + "\nData Mod: " + this.dataModificacao
-                + "\nAdministrador: " + this.administrador
-                + "\nAutorizado: " + this.autorizado;
-    }
-    
+        
 }

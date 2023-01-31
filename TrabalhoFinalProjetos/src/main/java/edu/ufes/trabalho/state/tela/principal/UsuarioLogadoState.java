@@ -1,5 +1,6 @@
 package edu.ufes.trabalho.state.tela.principal;
 
+import edu.ufes.trabalho.presenter.busca.TelaBuscarUsuariosPresenter;
 import edu.ufes.trabalho.presenter.principal.TelaPrincipalPresenter;
 
 public class UsuarioLogadoState extends TelaPrincipalState{
@@ -39,8 +40,6 @@ public class UsuarioLogadoState extends TelaPrincipalState{
     }
     
     private void ativarMenuAdministrador(){
-        this.principalPresenter.getView().getMiAlterarDados()
-                .setVisible(true);
         this.principalPresenter.getView().getMiListarUsuarios()
                 .setVisible(true);
         this.principalPresenter.getView().getMiNovaNotificacao()
@@ -53,8 +52,13 @@ public class UsuarioLogadoState extends TelaPrincipalState{
         return principalPresenter.getUsuarioAtual().isAdministrador();
     }
     
-    public void deslogar(){
-        principalPresenter.setEstado(new UsuarioDeslogadoState(principalPresenter));
+    @Override
+    public void manter() {
+        TelaBuscarUsuariosPresenter buscarUsuarioPresenter = 
+                new TelaBuscarUsuariosPresenter();
+        
+        this.principalPresenter.getView().getDesktopPane()
+                .add(buscarUsuarioPresenter.getView());
     }
     
 }

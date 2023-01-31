@@ -26,8 +26,8 @@ public class TelaLoginPresenter implements ITelaLoginSubject {
         initServices();
         initButtonListeners();
         
-        view.getTfLogin().setText("cgossington2@bloglines.com");
-        view.getPfSenha().setText("vIK9EXOpDjw");
+        view.getTfLogin().setText("gdie@yelp.com");
+        view.getPfSenha().setText("oipwkv0GUt");
         view.setVisible(true);
     }
 
@@ -45,7 +45,7 @@ public class TelaLoginPresenter implements ITelaLoginSubject {
         });
         
         // btnSair
-        view.getBtnSair().addActionListener(new ActionListener(){
+        view.getBtnFechar().addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e) {
                 sair();

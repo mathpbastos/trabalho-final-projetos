@@ -5,7 +5,6 @@ import edu.ufes.trabalho.presenter.principal.TelaPrincipalPresenter;
 public abstract class TelaPrincipalState {
     
     protected TelaPrincipalPresenter principalPresenter;
-    protected String descricao;
     
     public TelaPrincipalState(TelaPrincipalPresenter principalPresenter){
         this.principalPresenter = principalPresenter;
@@ -22,6 +21,11 @@ public abstract class TelaPrincipalState {
     }
     
     public void deslogar(){
+        throw new UnsupportedOperationException("Não é possível alterar "
+                + "o estado a partir do estado atual.");
+    }
+    
+    public void manter(){
         throw new UnsupportedOperationException("Não é possível alterar "
                 + "o estado a partir do estado atual.");
     }
